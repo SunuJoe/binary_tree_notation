@@ -33,6 +33,7 @@ int main(int argc, char* argv[])
 
   ShowPrefix(root);
   printf("\n");
+  printf("Infix Noatation : ");
   ShowInfix(root);
   printf("\n");
   ShowPostfix(root);

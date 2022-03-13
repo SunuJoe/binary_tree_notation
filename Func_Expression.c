@@ -79,8 +79,19 @@ void ShowPrefix(TREE* root)
 
 void ShowInfix(TREE* root)
 {
-  printf("Infix Notation : ");
-  InorderTraversal(root, Func_show);
+  if(root == NULL)
+    return;
+
+  if(root->left != NULL || root->right != NULL)
+    printf("(");
+
+  ShowInfix(root->left);
+  Func_show(root->data);
+  ShowInfix(root->right);
+
+  if(root->left != NULL || root->right != NULL)
+    printf(")");
+  //InorderTraversal(root, Func_show);
 }
 
 void ShowPostfix(TREE* root)
